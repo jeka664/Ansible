@@ -1,0 +1,22 @@
+- name: create user
+  ansible.builtin.user:
+    name: ansible
+    password: "{{ 'password' | password_hash('sha512', 'password') }}"
+    state: "present"
+    shell: "/bin/bash"
+    system: false
+    create_home: true
+    home: "/home/ansible"
+    comment: "Ansible user"
+- name: Creates directory
+  file:
+    path: /home/ansible/.ssh
+    state: directory
+- name: Copy public key
+  copy:
+    src: ../files/id_rsa.pub    
+    dest: /home/ansible/.ssh/id_rsa.pub      
+    decrypt: yes
+    owner: ansible
+    group: ansible
+    backup: no
