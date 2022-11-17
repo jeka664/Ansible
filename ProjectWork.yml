@@ -1,0 +1,19 @@
+- name: "create user"
+  hosts: app
+  become: true
+  roles:
+    - role: "./Roles/users"
+
+- name: "deploy docker"
+  hosts: app
+  gather_facts: true
+  become: true
+  roles:
+    - role: "./Roles/docker"
+
+- name: "deploy postgresql"
+  hosts: database
+  become: true
+  roles:
+    - role: "./Roles/postgresql"
+
