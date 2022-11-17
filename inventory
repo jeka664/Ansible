@@ -3,6 +3,13 @@
 10.129.0.6
 
 [database]
+127.0.0.1
+
+[database:vars]
+postgresql_version="14"
+postgresql_bin_path="/usr/lib/postgresql/14/bin"
+postgresql_data_dir="/var/lib/postgresql/14/main"
 
 [web]
+
 

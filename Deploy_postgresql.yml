@@ -1,5 +1,5 @@
 - name: "deploy postgresql"
-  hosts: db
+  hosts: database
   become: true
   roles:
-    - role: "./Roles/deploy_postgresql"
+    - role: "./Roles/postgresql"
