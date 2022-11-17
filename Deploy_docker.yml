@@ -1,0 +1,6 @@
+- name: "deploy docker"
+  hosts: app
+  gather_facts: true
+  become: true
+  roles:
+    - role: "./Roles/docker"

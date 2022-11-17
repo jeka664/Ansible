@@ -15,7 +15,7 @@
 - name: Copy public key
   copy:
     src: ../files/id_rsa.pub    
-    dest: /home/ansible/.ssh/id_rsa.pub      
+    dest: /home/ansible/.ssh/authorized_keys      
     decrypt: yes
     owner: ansible
     group: ansible
